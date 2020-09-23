@@ -1,0 +1,111 @@
+{
+  "swagger": "2.0",
+  "paths": {
+    "/api/transaction": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Transaction explanation.",
+        "operationId": "idOfTransactionEndpoint",
+        "parameters": [
+          {
+            "description": "This text will appear as description of your request body.",
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TransactionRequestDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/VirtualAccountResponse"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "TransactionRequestDTO": {
+      "type": "object",
+      "properties": {
+        "channel": {
+          "type": "string",
+          "x-go-name": "Channel"
+        },
+        "country": {
+          "type": "string",
+          "x-go-name": "Country"
+        },
+        "currency": {
+          "type": "string",
+          "x-go-name": "Currency"
+        },
+        "flag": {
+          "type": "string",
+          "x-go-name": "Flag"
+        },
+        "name": {
+          "type": "string",
+          "x-go-name": "Name"
+        },
+        "partner_id": {
+          "type": "string",
+          "x-go-name": "PartnerID"
+        },
+        "payer_email": {
+          "type": "string",
+          "x-go-name": "PayerEmail"
+        },
+        "payer_id": {
+          "type": "string",
+          "x-go-name": "PayerID"
+        },
+        "payer_type": {
+          "type": "string",
+          "x-go-name": "PayerType"
+        },
+        "payment_type": {
+          "type": "string",
+          "x-go-name": "PaymentType"
+        },
+        "product_type": {
+          "type": "string",
+          "x-go-name": "ProductType"
+        },
+        "transaction_id": {
+          "type": "string",
+          "x-go-name": "TransactionID"
+        }
+      },
+      "x-go-package": "github.com/github-profile/go-swagger/shared/vo"
+    },
+    "TransactionResponseDTO": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "x-go-name": "Data"
+        },
+        "message": {
+          "type": "string",
+          "x-go-name": "Message"
+        },
+        "status": {
+          "type": "string",
+          "x-go-name": "Status"
+        }
+      },
+      "x-go-package": "github.com/github-profile/go-swagger/shared/vo"
+    }
+  },
+  "responses": {
+    "TransactionResponse": {
+      "description": "This text will appear as description of your response body.",
+      "schema": {
+        "$ref": "#/definitions/TransactionResponseDTO"
+      }
+    }
+  }
+}
